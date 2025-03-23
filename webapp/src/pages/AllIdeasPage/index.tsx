@@ -15,14 +15,12 @@ export const AllIdeasPage = () => {
   return (
     <div>
       <h1>All Ideas</h1>
-      {data.ideas.map(
-        (idea: { nick: string; name: string; description: string }) => (
-          <div key={idea.nick}>
-            <h2>{idea.name}</h2>
-            <p>{idea.description}</p>
-          </div>
-        )
-      )}
+      {data.ideas.map((idea) => (
+        <div key={idea.nick}>
+          <h2>{idea.name}</h2>
+          <p>{idea.description}</p>
+        </div>
+      ))}
     </div>
   );
 };
