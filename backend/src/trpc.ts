@@ -33,8 +33,6 @@ const ideas = [
   },
 ];
 
-const x: number = 1
-
 const trpc = initTRPC.create();
 
 export const trpcRouter = trpc.router({
@@ -42,6 +40,5 @@ export const trpcRouter = trpc.router({
     return { ideas };
   }),
 });
-
 
 export type TrpcRouter = typeof trpcRouter;
