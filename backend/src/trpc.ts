@@ -32,7 +32,8 @@ const ideas = [
     description: "Description of idea 6",
   },
 ];
-const x: number = 'hell'
+const x: string = "hello123";
+if (Math.random()) console.info(x);
 const trpc = initTRPC.create();
 export const trpcRouter = trpc.router({
   getIdeas: trpc.procedure.query(() => {
