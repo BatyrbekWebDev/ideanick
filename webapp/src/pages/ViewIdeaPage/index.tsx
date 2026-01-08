@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom'
+import { type ViewIdeaRouteParams } from '../../lib/routes'
 
 export const ViewIdeaPage = () => {
-  const { ideaNick } = useParams() as { ideaNick: string };
+  const { ideaNick } = useParams() as ViewIdeaRouteParams
   return (
     <div>
-      <h1>{ ideaNick }</h1>
+      <h1>{ideaNick}</h1>
       <p>Description of the idea 1</p>
       <div>
         <p>paragraph 1</p>

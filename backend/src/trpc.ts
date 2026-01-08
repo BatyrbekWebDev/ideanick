@@ -1,43 +1,23 @@
 import { initTRPC } from "@trpc/server";
+import _ from "lodash";
 
-const ideas = [
-  {
-    nick: "cool-idea-nick1",
-    name: "Idea 1",
-    description: "Description of idea 1",
-  },
-  {
-    nick: "cool-idea-nick2",
-    name: "Idea 2",
-    description: "Description of idea 2",
-  },
-  {
-    nick: "cool-idea-nick3",
-    name: "Idea 3",
-    description: "Description of idea 3",
-  },
-  {
-    nick: "cool-idea-nick4",
-    name: "Idea 4",
-    description: "Description of idea 4",
-  },
-  {
-    nick: "cool-idea-nick5",
-    name: "Idea 5",
-    description: "Description of idea 5",
-  },
-  {
-    nick: "cool-idea-nick6",
-    name: "Idea 6",
-    description: "Description of idea 6",
-  },
-];
-const x: string = "hello123";
-if (Math.random() +1) console.info(x);
+const ideas = _.times(100, (i) => ({
+  nick: `cool-idea-nick-${i}`,
+  name: `Idea ${i}`,
+  description: `Description of idea ${i}...`,
+  text: _.times(100, (j) => `<p>Text parapgraph ${j} of idea  ${i}...</p>`),
+}));
+
+
 const trpc = initTRPC.create();
+
+// console.log(ideas.map((idea) => _.pick(idea, ["nick", "name", "description"])))
+
 export const trpcRouter = trpc.router({
   getIdeas: trpc.procedure.query(() => {
-    return { ideas };
+    return {
+      ideas: ideas.map((idea) => _.pick(idea, ["nick", "name", "description"])),
+    };
   }),
 });
 
