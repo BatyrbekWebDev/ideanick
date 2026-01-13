@@ -19,6 +19,7 @@
     "@trpc/client": "^10.37.1",
     "@trpc/react-query": "^10.37.1",
     "@trpc/server": "^10.37.1",
+    "formik": "^2.4.9",
     "include-media": "^2.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
